@@ -1,0 +1,312 @@
+﻿<Window x:Class="DiplomProgram.View.AdministrationWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiplomProgram.View"
+        mc:Ignorable="d"
+        Title="AdministrationWindows" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+
+    <Border CornerRadius="50">
+        <Border CornerRadius="12"
+                BorderThickness="1"
+                Opacity="0.85">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0" >
+                    <GradientStop Color="#013957" Offset="0.37"/>
+                    <GradientStop Color="White" Offset="0.56"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Меню администратора"
+                               Foreground="DarkGray"
+                               FontSize="10"
+                               FontFamily="Montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="12,0,0,0"/>
+                <Button x:Name="BMinimaze"                            
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BMinimaze_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" 
+                                        Value="#28AEED"/>
+                            <Style.Triggers>
+                                <Trigger 
+                                        Property="IsMouseOver"
+                                             Value="True">
+                                    <Setter 
+                                            Property="Background"
+                                                Value="#278BEF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+                <Button x:Name="BClose"                            
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="BClose_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" 
+                                        Value="#28AEED"/>
+                            <Style.Triggers>
+                                <Trigger 
+                                        Property="IsMouseOver"
+                                             Value="True">
+                                    <Setter 
+                                            Property="Background"
+                                                Value="#278BEF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter 
+                                    VerticalAlignment="Center"                                                 
+                                    HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Grid.Row="3" 
+                            Orientation="Horizontal" 
+                            Width="auto"
+                            Height="35"
+                            VerticalAlignment="Bottom">
+                    <Button x:Name="BAdd" 
+                            Content="Добавить сотрудника" 
+                            Click="BAdd_Click"
+                            FontSize="13"
+                            Foreground="#CBB3FF"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,5,0,0" Height="30" VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" 
+                                        Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                        <Setter 
+                                            Property="Background"
+                                                Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BRedact" 
+                            Content="Редактировать" 
+                            Click="BRedact_Click"
+                            FontSize="16"
+                            Foreground="#CBB3FF"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,5,0,0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" 
+                                        Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                        <Setter 
+                                            Property="Background"
+                                                Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="114" Height="40"
+                                        CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter 
+                                        VerticalAlignment="Center"         
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BDel"
+                            Content="Удалить" 
+                            Click="BDel_Click"
+                            Foreground="#CBB3FF"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,5,0,0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" 
+                                        Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                        <Setter 
+                                            Property="Background"
+                                                Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="40"
+                                        CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter 
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="TBSearch"  Grid.Row="1"  Width="255"  Height="25"  GotFocus="TBSearch_GotFocus" LostFocus="TBSearch_LostFocus" />
+                            <Button x:Name="BSearch"  Grid.Column="0"   Grid.RowSpan="2"  Width="auto"  Height="25" Background="Transparent" Click="BSearch_Click">
+                                <Image Source="/Images/icons8-google-поиск-30.png"   Width="auto"  Height="auto"  />
+                            </Button>
+                            <Button x:Name="BSbros"  BorderThickness="0"  Content="X"  Foreground="Black"  FontSize="16"   FontFamily="Montserrat"       Cursor="Hand" Grid.Column="0" Click="BSbros_Click" Grid.Row="1" RenderTransformOrigin="0.696,0.13" Width="auto" Height="25">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#278BEF"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <StackPanel>
+                                    <ComboBox  Style="{DynamicResource ResCBStyle}"   Name="PostCB" Margin="10,5" DisplayMemberPath="name" SelectedItem="{Binding rol}" SelectionChanged="PostCB_SelectionChanged"/>
+                                    <Button Style="{StaticResource BTStyle}" x:Name="ClearBT" Content="Очистить фильтр" Margin="10,5" Click="ClearBT_Click"/>
+                                    <Grid>
+                                        <TextBox x:Name="NameTB" Style="{StaticResource TBStyleClient}" Text="{Binding login}" Margin="10,5" TextChanged="TitleTB_TextChanged"></TextBox>
+                                        <TextBlock IsHitTestVisible="False" Text="Поиск по имени" Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock.Style>
+                                                <Style TargetType="{x:Type TextBlock}">
+                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=NameTB, Path=Text}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Grid>
+                                   
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <DataGrid  x:Name="DGAddAdmin" Width="540" Background="Transparent" HorizontalAlignment="Right"  AutoGenerateColumns="False"  Grid.Column="1">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn  Header="ФИО"  Binding="{Binding FIO}"/>
+                                        <DataGridTextColumn  Header="Должность" Binding="{Binding rol.name}"/>
+                                        <DataGridTextColumn  Header="Адресс"  Binding="{Binding Adress}" />
+                                        <DataGridTextColumn  Header="Телефон" Binding="{Binding Phone}"/>
+                                        <DataGridTextColumn  Header="Логин"  Binding="{Binding Login}"/>
+                                        <DataGridTextColumn  Header="Пароль" Binding="{Binding Password}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+
+
+</Window>
