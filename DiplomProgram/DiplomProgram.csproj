@@ -164,69 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\BaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BaseModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Branches.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BranchStaff.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Car.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CarDrivers.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Client.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Drivers.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MedicalInsurance.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Policies.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PolicyHolder.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Realty.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\rol.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Staff.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\typerealty.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\WatermarkService.cs" />
     <Compile Include="View\AddAgentWindow.xaml.cs">
       <DependentUpon>AddAgentWindow.xaml</DependentUpon>
@@ -419,13 +356,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\BaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\BaseModel.edmx.diagram">
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -441,7 +371,9 @@
   <ItemGroup>
     <Resource Include="Images\login_icon_244035.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\8c.jpg" />
   </ItemGroup>
@@ -465,18 +397,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\BaseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\BaseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-      <LastGenOutput>BaseModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
